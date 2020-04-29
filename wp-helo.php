@@ -55,6 +55,7 @@ class WP_HELO {
 	public function configure_phpmailer( $phpmailer ) {
 
 		$mailbox_name = get_bloginfo( 'name' );
+		$mailbox_name = apply_filters( 'wp_helo_mailbox_name', $mailbox_name );
 
 		$phpmailer->isSMTP();
 
